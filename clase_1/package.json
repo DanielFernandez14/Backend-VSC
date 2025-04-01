@@ -1,0 +1,20 @@
+{
+  "name": "mi-primer-proyecto-de-node",
+  "version": "1.0.0",
+  "description": "un simple ejemplo de aplicacion en node",
+  "keywords": [
+    "node",
+    "backend",
+    "arquitectura",
+    "utn"
+  ],
+  "license": "ISC",
+  "author": "Daniel Matias Fernandez",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node app.js",
+    "variables": "node variables.js",
+    "destructuring": "node destructuring.js"
+  }
+}
