@@ -1,7 +1,7 @@
 import { useState } from 'react'
-import './App.css'
+import './Personajes.css'
 
-function App() {
+function Personajes() {
   const [characters, setCharacters] = useState([])
 
   const fetchingData = async () => {
@@ -14,7 +14,7 @@ function App() {
 
   return (
     <div className='container'>
-      <h1>Hola desde app</h1>
+      <h1>Hola desde Personajes</h1>
       <h2>Soy un subtitulo</h2>
       <div className='grid'>
     {
@@ -32,4 +32,4 @@ function App() {
   )
 }
 
-export default App
+export { Personajes }

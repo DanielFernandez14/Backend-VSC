@@ -1,0 +1,110 @@
+/* Contenedor general */
+.container {
+    padding: 2rem;
+    background-color: #1f1f2e;
+    min-height: 100vh;
+  }
+  
+  /* Título principal */
+  .container > h2 {
+    text-align: center;
+    color: #ffffff;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  /* Grid de tarjetas */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+  }
+  
+  /* Tarjeta de producto */
+  .card2 {
+    background-color: #2a2a3d;
+    color: #fff;
+    padding: 1.5rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Efecto al pasar el mouse */
+  .card2:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+  }
+  
+  /* Imagen del producto */
+  .card2 img {
+    max-width: 100%;
+    height: 200px;
+    object-fit: contain;
+    margin-top: 1rem;
+    border-radius: 12px;
+  }
+  
+  /* Título del producto */
+  .card2 h2 {
+    font-size: 1rem;
+    color: #facc15; /* amarillo suave */
+    margin-bottom: 0.5rem;
+  }
+  
+  .form-section {
+    background-color: #1f1f2e;
+    padding: 2rem;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 600px;
+    margin: 2rem auto;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  }
+  
+  .form-title {
+    color: #facc15;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+  }
+  
+  .product-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .form-input {
+    padding: 0.8rem 1rem;
+    border: none;
+    border-radius: 10px;
+    background-color: #2e2e3f;
+    color: #ffffff;
+    font-size: 1rem;
+  }
+  
+  .form-input::placeholder {
+    color: #aaaaaa;
+  }
+  
+  .form-button {
+    padding: 0.8rem 1rem;
+    border: none;
+    border-radius: 10px;
+    background-color: #3b82f6;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .form-button:hover {
+    background-color: #2563eb;
+  }
+  
