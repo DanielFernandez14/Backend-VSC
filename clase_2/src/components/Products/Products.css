@@ -1,110 +1,114 @@
-/* Contenedor general */
-.container {
+/* Estilo general */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    color: #333;
+  }
+  
+  /* Contenedor principal */
+  .container {
+    max-width: 1200px;
+    margin: auto;
     padding: 2rem;
-    background-color: #1f1f2e;
-    min-height: 100vh;
   }
   
-  /* Título principal */
-  .container > h2 {
+  /* Título */
+  .container h2 {
     text-align: center;
-    color: #ffffff;
-    font-size: 2rem;
-    margin-bottom: 2rem;
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    color: #1a73e8;
   }
   
-  /* Grid de tarjetas */
+  /* Grilla de productos */
   .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 2rem;
-    justify-items: center;
   }
   
   /* Tarjeta de producto */
-  .card2 {
-    background-color: #2a2a3d;
-    color: #fff;
-    padding: 1.5rem;
-    border-radius: 16px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-    width: 100%;
-    max-width: 300px;
+  .card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    padding: 1.2rem;
+    transition: transform 0.3s ease;
     text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   
-  /* Efecto al pasar el mouse */
-  .card2:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+  .card:hover {
+    transform: scale(1.03);
   }
   
-  /* Imagen del producto */
-  .card2 img {
+  .card img {
     max-width: 100%;
     height: 200px;
     object-fit: contain;
-    margin-top: 1rem;
-    border-radius: 12px;
+    margin-bottom: 1rem;
   }
   
-  /* Título del producto */
-  .card2 h2 {
-    font-size: 1rem;
-    color: #facc15; /* amarillo suave */
+  .card h2 {
+    font-size: 1.1rem;
+    color: #333;
     margin-bottom: 0.5rem;
   }
   
-  .form-section {
-    background-color: #1f1f2e;
+  .card h3 {
+    font-size: 1rem;
+    color: #00b894;
+  }
+  
+  .card p {
+    font-size: 0.9rem;
+    color: #555;
+  }
+  
+  /* Sección de formulario */
+  section {
+    margin-top: 4rem;
     padding: 2rem;
-    border-radius: 16px;
-    width: 100%;
-    max-width: 600px;
-    margin: 2rem auto;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(to right, #e0f7fa, #e1bee7);
+    border-radius: 12px;
   }
   
-  .form-title {
-    color: #facc15;
+  section h2 {
     text-align: center;
-    margin-bottom: 1.5rem;
-    font-size: 1.8rem;
+    color: #6a1b9a;
+    margin-bottom: 1rem;
   }
   
-  .product-form {
+  /* Formulario */
+  form {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    max-width: 500px;
+    margin: auto;
   }
   
-  .form-input {
+  input {
     padding: 0.8rem 1rem;
-    border: none;
-    border-radius: 10px;
-    background-color: #2e2e3f;
-    color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
     font-size: 1rem;
+    outline-color: #1a73e8;
   }
   
-  .form-input::placeholder {
-    color: #aaaaaa;
-  }
-  
-  .form-button {
-    padding: 0.8rem 1rem;
+  button {
+    padding: 0.9rem;
+    background-color: #1a73e8;
+    color: #fff;
     border: none;
-    border-radius: 10px;
-    background-color: #3b82f6;
-    color: white;
-    font-weight: bold;
+    border-radius: 8px;
     font-size: 1rem;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s;
   }
   
-  .form-button:hover {
-    background-color: #2563eb;
+  button:hover {
+    background-color: #0c47a1;
   }
   
