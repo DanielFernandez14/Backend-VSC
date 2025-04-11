@@ -7,8 +7,6 @@ const usuarios = [
 ];
 
 
-console.log("hola!")
-
 // recibir el input
 // procesar el input 
 // buscar la data en caso de que sea apto y tenga el permiso
@@ -17,8 +15,5 @@ console.log("hola!")
 //pedirle al usuario que indique que si quiere la lista de usuarios  debe indicarlo mediante el comando "getUsers"
 // validar credencial
 
-const argumentos = process.argv
-
-console.log(argumentos)
 
 export { usuarios }
