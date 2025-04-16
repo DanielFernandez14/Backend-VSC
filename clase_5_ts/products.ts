@@ -1,9 +1,6 @@
 import crypto from "node:crypto";
 
 
-
-
-
 interface Product {
     id: string;
     name: string;
