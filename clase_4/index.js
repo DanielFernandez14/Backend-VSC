@@ -31,37 +31,66 @@ if (argumentos[0] === "getUsers") {
     // console.log(`${u.id} - ${u.nombre} - ${u.email} - ${u.rol}`)
     console.log(usuarios)
   })
+  } else if (argumentos[0] === "updateUser") {
+    const id = Number(argumentos[1])
+    const usuarioEncontrado = usuarios.find((usuarios) => usuarios.id === id) 
+    console.log(usuarioEncontrado, "<- usuario original")
   
-} else if (argumentos[0] === "updateUser") {
-  const id = argumentos[1]
-  const usuarioEncontrado = usuarios.find((usuario) => usuario.id === Number(id))
-  if (usuarioEncontrado === undefined) {
-    console.log("Usuario no encontrado para modificar...")
-  } else {
-    const nombre = argumentos[2]
-    const email = argumentos[3]
-    const rol = argumentos[4]
+    if(usuarioEncontrado === undefined) {
+      console.log("Usuario no encontrado para modificar...")
+    } else {
+      const nombre =  argumentos[2]
+      const email = argumentos[3]
+      const rol = argumentos[4]
 
+
+// como le voy a enviar un nombre, mail o rol disinto a un guion, entonces lo voy a modificar 
     if (nombre !== "-") {
       usuarioEncontrado.nombre = nombre
     }
+
     if (email !== "-") {
-      usuarioEncontrado.rol = rol
-    }
-    if (rol !== "-") {
       usuarioEncontrado.email = email
     }
 
-    console.log(usuarioEncontrado)
+    if (rol !== "-") {
+      usuarioEncontrado.rol = rol
+    }
 
-    console.log(nombre, "<- Nombre")
-    console.log(email, "<- Email")
-    console.log(rol, "<- Rol")
-  }
-} else if (argumentos[0] === "deleteUser") {
-  const id = Number(argumentos[1])
-  const usuarioEncontrado = usuarios.find(usuario => usuario.id === id)
-  console.log(usuarioEncontrado)
-  } else {
-  console.log("401 Unauthorized")
+    console.log(usuarioEncontrado, "<- usuario actualizado")
+    console.log(usuarios, "<- lista de usuarios actualizada")
+}
+    
+  } else if (argumentos[0] === "deleteUser"){
+    const id = argumentos[1] 
+    if (id === undefined) {
+      console.log("Debes ingresar el Id del usuario que deseas borrar...")
+    }
+
+
+
+//filter 
+// findIndex - splice
+let usuarioBorrado = null
+
+    const usuariosFiltrados = usuarios.filter(usuario => {
+      if (usuario.id !== Number(id)) {
+        return usuario
+      } else {
+        usuarioBorrado = usuario
+        // console.log(usuarioBorrado, "<- Usuario borrado...")
+        // console.log(usuariosFiltrados, "<- Lista de usuarios filtrados...")
+        // console.log("Usuario borrado correctamente...")
+      }
+    })
+
+    if (usuarios.length === usuariosFiltrados.length && id !== undefined) {
+      console.log("Usuario no encontrado...")
+    } 
+    if (usuarioBorrado) {
+      console.log(usuariosFiltrados)
+    }
+    
+
+  } else { console.log("401 Unauthorized")
 }
