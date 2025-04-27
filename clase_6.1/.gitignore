@@ -1,0 +1,53 @@
+# Node modules (las dependencias instaladas)
+node_modules/
+
+# Dist (código compilado de TypeScript)
+dist/
+
+# Env files (variables sensibles)
+.env
+
+# Logs
+logs/
+*.log
+
+# Build outputs
+build/
+out/
+
+# Temporal system files
+.DS_Store
+Thumbs.db
+
+# Coverage (si usás testing con cobertura)
+coverage/
+
+# TypeScript cache
+*.tsbuildinfo
+
+# IDE settings (por si usás VSCode o similares)
+.vscode/
+.idea/
+
+
+
+# Explicación de cada línea del .gitignore
+# El archivo .gitignore le dice a Git qué archivos o carpetas no debe subir al repositorio.
+
+# node_modules/	No sube las dependencias instaladas
+
+# dist/	No sube el JavaScript compilado
+
+# .env	No sube tus claves o configuraciones privadas
+
+# logs/, *.log	No sube archivos de registro
+
+# build/, out/	No sube carpetas de otros builds
+
+# .DS_Store, Thumbs.db	No sube basura de sistemas operativos
+
+# coverage/	No sube reportes de tests
+
+# *.tsbuildinfo	No sube caché de TypeScript
+
+# .vscode/, .idea/	No sube configuraciones locales del editor
