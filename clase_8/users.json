@@ -1,0 +1,42 @@
+[
+  {
+    "nombre": "Juan",
+    "apellido": "Pérez",
+    "curso": "Desarrollo Web"
+  },
+  {
+    "nombre": "María",
+    "apellido": "Gómez",
+    "curso": "Marketing Digital"
+  },
+  {
+    "nombre": "Lucas",
+    "apellido": "Fernández",
+    "curso": "Diseño UX/UI"
+  },
+  {
+    "nombre": "Ana",
+    "apellido": "Martínez",
+    "curso": "Programación en Python"
+  },
+  {
+    "nombre": "Diego",
+    "apellido": "Rodríguez",
+    "curso": "Administración de Bases de Datos"
+  },
+  {
+    "nombre": "Sofía",
+    "apellido": "López",
+    "curso": "Ciberseguridad"
+  },
+  {
+    "nombre": "Matías",
+    "apellido": "Sánchez",
+    "curso": "Desarrollo de Videojuegos"
+  },
+  {
+    "nombre": "Carla",
+    "apellido": "Romero",
+    "curso": "Inteligencia Artificial"
+  }
+]

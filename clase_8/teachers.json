@@ -1,0 +1,50 @@
+[
+  {
+    "nombre": "Laura",
+    "apellido": "Méndez",
+    "curso": "Desarrollo Web",
+    "cargaHoraria": "12 horas semanales"
+  },
+  {
+    "nombre": "Gabriel",
+    "apellido": "Torres",
+    "curso": "Marketing Digital",
+    "cargaHoraria": "10 horas semanales"
+  },
+  {
+    "nombre": "Valeria",
+    "apellido": "Suárez",
+    "curso": "Diseño UX/UI",
+    "cargaHoraria": "8 horas semanales"
+  },
+  {
+    "nombre": "Esteban",
+    "apellido": "Vega",
+    "curso": "Programación en Python",
+    "cargaHoraria": "14 horas semanales"
+  },
+  {
+    "nombre": "Patricia",
+    "apellido": "Costa",
+    "curso": "Administración de Bases de Datos",
+    "cargaHoraria": "10 horas semanales"
+  },
+  {
+    "nombre": "Ricardo",
+    "apellido": "Morales",
+    "curso": "Ciberseguridad",
+    "cargaHoraria": "12 horas semanales"
+  },
+  {
+    "nombre": "Luciana",
+    "apellido": "Navarro",
+    "curso": "Desarrollo de Videojuegos",
+    "cargaHoraria": "15 horas semanales"
+  },
+  {
+    "nombre": "Federico",
+    "apellido": "Blanco",
+    "curso": "Inteligencia Artificial",
+    "cargaHoraria": "16 horas semanales"
+  }
+]

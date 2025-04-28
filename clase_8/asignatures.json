@@ -1,0 +1,74 @@
+[
+  {
+    "curso": "Desarrollo Web",
+    "asignaturas": [
+      "HTML y CSS",
+      "JavaScript Básico",
+      "Diseño Responsivo",
+      "Accesibilidad Web"
+    ]
+  },
+  {
+    "curso": "Marketing Digital",
+    "asignaturas": [
+      "Fundamentos de Marketing",
+      "Publicidad en Redes Sociales",
+      "SEO y SEM",
+      "Email Marketing"
+    ]
+  },
+  {
+    "curso": "Diseño UX/UI",
+    "asignaturas": [
+      "Principios de UX",
+      "Prototipado y Wireframes",
+      "Psicología del Usuario",
+      "Diseño de Interfaces"
+    ]
+  },
+  {
+    "curso": "Programación en Python",
+    "asignaturas": [
+      "Introducción a Python",
+      "Estructuras de Datos",
+      "Programación Orientada a Objetos",
+      "Desarrollo de APIs"
+    ]
+  },
+  {
+    "curso": "Administración de Bases de Datos",
+    "asignaturas": [
+      "Modelado de Datos",
+      "SQL Avanzado",
+      "Optimización de Consultas",
+      "Seguridad en Bases de Datos"
+    ]
+  },
+  {
+    "curso": "Ciberseguridad",
+    "asignaturas": [
+      "Fundamentos de Seguridad",
+      "Hacking Ético",
+      "Criptografía",
+      "Protección de Redes"
+    ]
+  },
+  {
+    "curso": "Desarrollo de Videojuegos",
+    "asignaturas": [
+      "Introducción a Motores de Juego",
+      "Diseño de Personajes",
+      "Programación de Física",
+      "Narrativa Interactiva"
+    ]
+  },
+  {
+    "curso": "Inteligencia Artificial",
+    "asignaturas": [
+      "Fundamentos de IA",
+      "Machine Learning",
+      "Redes Neuronales",
+      "Procesamiento de Lenguaje Natural"
+    ]
+  }
+]
