@@ -1,0 +1,9 @@
+[
+  { "nombre": "Auriculares Bluetooth", "precio": 8500, "stock": 25 },
+  { "nombre": "Mouse Gamer", "precio": 4300, "stock": 40 },
+  { "nombre": "Teclado Mecánico", "precio": 11500, "stock": 18 },
+  { "nombre": "Monitor 24''", "precio": 67999, "stock": 10 },
+  { "nombre": "Notebook Lenovo", "precio": 235000, "stock": 5 },
+  { "nombre": "Cable USB-C", "precio": 799, "stock": 100 },
+  {"nombre": "Lacicera", "precio": 150, "stock": 1000}
+]
