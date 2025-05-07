@@ -1,5 +1,6 @@
 import { Schema, model } from 'mongoose';
 import {connectDb} from './config/mongo';
+import mongoose from 'mongoose';
 import { create } from 'domain';
 connectDb()
 
@@ -110,14 +111,54 @@ const createBook = async (book: Book): Promise<QueryRes | void> => {
     }
     }
 };
-const updateBook = async (id: string, dataBook: Partial <Book> ) => {}
+const updateBook = async (id: string, dataBook: Partial<Book>): Promise<QueryRes> => {
+    try {
+      // Validar formato de ObjectId
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+        return {
+        success: false,
+        message: 'ID inválido',
+        data: null
+        };
+    }
+
+      // Actualizar y devolver el nuevo documento
+    const updatedBook = await Book.findByIdAndUpdate(id, dataBook, {
+        new: true, // Devuelve el documento actualizado
+        runValidators: true // Aplica validaciones del schema
+    });
+
+    if (!updatedBook) {
+        return {
+        success: false,
+        message: 'Libro no encontrado para actualizar',
+        data: null
+        };
+    }
+
+    return {
+        success: true,
+        message: 'Libro actualizado correctamente',
+        data: updatedBook
+    };
+
+    } catch (error: any) {
+    console.error('Error al actualizar el libro:', error);
+    return {
+        success: false,
+        message: 'Error en la operación de actualización',
+        data: null,
+        error: error.message
+    };
+    }
+};
 const deleteBook = async () => {}
 
 
 
 
 const main = async () => {
-    const book = await getBooksById('');
+    const book = await updateBook('64f1a0b2c4d3e5f8b8e4a0c1', { title: 'El Hobbit', releaseYear: 1937, raiting: 4.5 });
     console.log(book)
 }
 main()
