@@ -39,6 +39,7 @@ const createSuccessRes = (success: boolean, message: string, data: Book | Book [
     };
 }
 
+
 const getBooks = async () => {
     try
     {
@@ -47,6 +48,8 @@ const getBooks = async () => {
     } catch (error: any) {
         return createSuccessRes(false, 'Error al obtener los libros', error.message);
 }}
+
+
 const getBooksById = async (id: string): Promise<QueryRes> => {
     try {
       // Validar si el ID es válido de forma rápida
@@ -152,13 +155,52 @@ const updateBook = async (id: string, dataBook: Partial<Book>): Promise<QueryRes
     };
     }
 };
-const deleteBook = async () => {}
+
+
+const deleteBook = async (id: string): Promise<QueryRes> => {
+    try {
+      // Validar formato del ID
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+        return {
+        success: false,
+        message: 'ID inválido',
+        data: null
+        };
+    }
+
+      // Intentar eliminar el libro
+    const deletedBook = await Book.findByIdAndDelete(id);
+
+    if (!deletedBook) {
+        return {
+        success: false,
+        message: 'Libro no encontrado para eliminar',
+        data: null
+        };
+    }
+
+    return {
+        success: true,
+        message: 'Libro eliminado exitosamente',
+        data: deletedBook
+    };
+
+    } catch (error: any) {
+    console.error('Error al eliminar el libro:', error);
+    return {
+        success: false,
+        message: 'Error en la operación de eliminación',
+        data: null,
+        error: error.message
+    };
+    }
+};
 
 
 
 
 const main = async () => {
-    const book = await updateBook('64f1a0b2c4d3e5f8b8e4a0c1', { title: 'El Hobbit', releaseYear: 1937, raiting: 4.5 });
+    const book = await deleteBook('681ad091c42eb3227f5fe415');
     console.log(book)
 }
 main()
