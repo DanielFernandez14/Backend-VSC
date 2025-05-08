@@ -14,4 +14,33 @@ const connectMongoDb = async () => {
     }
 }
 
+const gamesSchema = new Schema({
+    title: {type: String, required: true, unique: true},
+    year: {type: Number, required: true, unique: true},
+    rating: {type: Number, default: 0},
+    gender: {type: String, required: true}
+})
+
+const games = model("Games", gamesSchema)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 connectMongoDb()
