@@ -1,0 +1,62 @@
+[
+  {
+    "title": "Cien años de soledad",
+    "author": "Gabriel García Márquez",
+    "year": 1967,
+    "rating": 9.8
+  },
+  {
+    "title": "1984",
+    "author": "George Orwell",
+    "year": 1949,
+    "rating": 9.5
+  },
+  {
+    "title": "Fahrenheit 451",
+    "author": "Ray Bradbury",
+    "year": 1953,
+    "rating": 9.1
+  },
+  {
+    "title": "El nombre del viento",
+    "author": "Patrick Rothfuss",
+    "year": 2007,
+    "rating": 9.3
+  },
+  {
+    "title": "Crónica de una muerte anunciada",
+    "author": "Gabriel García Márquez",
+    "year": 1981,
+    "rating": 8.9
+  },
+  {
+    "title": "Rayuela",
+    "author": "Julio Cortázar",
+    "year": 1963,
+    "rating": 8.8
+  },
+  {
+    "title": "El retrato de Dorian Gray",
+    "author": "Oscar Wilde",
+    "year": 1890,
+    "rating": 9.0
+  },
+  {
+    "title": "Los juegos del hambre",
+    "author": "Suzanne Collins",
+    "year": 2008,
+    "rating": 8.7
+  },
+  {
+    "title": "La sombra del viento",
+    "author": "Carlos Ruiz Zafón",
+    "year": 2001,
+    "rating": 9.2
+  },
+  {
+    "title": "Orgullo y prejuicio",
+    "author": "Jane Austen",
+    "year": 1813,
+    "rating": 9.4
+  }
+]

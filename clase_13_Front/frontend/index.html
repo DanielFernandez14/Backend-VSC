@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Formulario de Juego</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #121212;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .form-container {
+      background: #1f1f1f;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 255, 170, 0.3);
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .form-container h2 {
+      margin-bottom: 20px;
+      color: #00ffaa;
+      text-align: center;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+      color: #ccc;
+    }
+
+    input[type="text"],
+    input[type="number"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: none;
+      border-radius: 6px;
+      background-color: #2a2a2a;
+      color: white;
+      font-size: 16px;
+      outline: none;
+    }
+
+    input[type="text"]:focus,
+    input[type="number"]:focus {
+      box-shadow: 0 0 5px #00ffaa;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #00ffaa;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      color: #121212;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #00dd99;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-container">
+    <h2>Nuevo Juego</h2>
+    <form id="gameForm">
+      <label for="title">Título:</label>
+      <input type="text" id="title" name="title" required>
+
+      <label for="rating">Rating:</label>
+      <input type="number" id="rating" name="rating" min="0" max="10" step="0.1" required>
+
+      <button type="submit">Guardar</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("gameForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const title = document.getElementById("title").value;
+      const rating = document.getElementById("rating").value;
+
+      console.log("Enviando:", { title, rating });
+
+      // Acá podrías hacer un fetch a tu backend:
+      /*
+      fetch("/api/games", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ title, rating })
+      })
+      .then(res => res.json())
+      .then(data => console.log(data))
+      .catch(err => console.error(err));
+      */
+    });
+  </script>
+
+</body>
+</html>
