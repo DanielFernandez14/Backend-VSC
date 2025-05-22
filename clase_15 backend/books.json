@@ -1,0 +1,52 @@
+[
+  {
+    "title": "Cien años de soledad",
+    "author": "Gabriel García Márquez",
+    "year": 1967
+  },
+  {
+    "title": "1984",
+    "author": "George Orwell",
+    "year": 1949
+  },
+  {
+    "title": "Rayuela",
+    "author": "Julio Cortázar",
+    "year": 1963
+  },
+  {
+    "title": "Crónica de una muerte anunciada",
+    "author": "Gabriel García Márquez",
+    "year": 1981
+  },
+  {
+    "title": "Fahrenheit 451",
+    "author": "Ray Bradbury",
+    "year": 1953
+  },
+  {
+    "title": "Don Quijote de la Mancha",
+    "author": "Miguel de Cervantes",
+    "year": 1605
+  },
+  {
+    "title": "El Principito",
+    "author": "Antoine de Saint-Exupéry",
+    "year": 1943
+  },
+  {
+    "title": "La invención de Morel",
+    "author": "Adolfo Bioy Casares",
+    "year": 1940
+  },
+  {
+    "title": "Los detectives salvajes",
+    "author": "Roberto Bolaño",
+    "year": 1998
+  },
+  {
+    "title": "El nombre de la rosa",
+    "author": "Umberto Eco",
+    "year": 1980
+  }
+]
