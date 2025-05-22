@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Formulario</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <form id="movieForm">
+    <h2>Agregar Libro</h2>
+    <label for="title">Título</label>
+    <input type="text" id="title" name="title" placeholder="Ej: Inception" required />
+
+    <label for="title">Author</label>
+    <input type="text" id="author" name="author" placeholder="Ej: Rojas" required />
+
+    <label for="title">Year</label>
+    <input type="text" id="year" name="year" placeholder="Ej: 1985" required />
+
+    <button id="btn-submit" class="btn-guardar" type="submit">Guardar</button>
+  </form>
+
+  <section id="booksList">
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>
