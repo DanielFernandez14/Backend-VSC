@@ -17,7 +17,9 @@ const bookSchema = new Schema({
 
 const Book = model ("Book", bookSchema)
 
+
 const app = express()
+app.use(express.json())
 app.use(cors())
 
 const getAllBooks = async () => {
@@ -63,6 +65,43 @@ app.get("/db-api-utn/books", async (request, response): Promise<any> => {
 // https://rickandmortyapi.com/api/character/43
 
 // Metodo HTTP -> get post patch delete
+
+// POST - https://localhost:1234/api/books
+app.post("/db-api-utn/books", async (req, res): Promise<any> => {
+    try {
+        const body = req.body
+        const {title, author, year} = body 
+        if (!title || !author || !year) return res.status(400).json ({success: false, message: "data invalid"})
+
+        const newBook = new Book ({title, author,year})
+        const saveBook = await newBook.save()
+        res.status(201).json({success: true,  saveBook, message: "libro agregado con exito"})    
+    } catch (error) {
+        const err = error as Error
+        res.status(500).json({
+            success: false,
+            message: err.message
+        })
+    }
+})
+
+app.delete("/db-api-utn/books/:id", async (req, res): Promise<any> => {
+    try {
+        const id = req.params.id
+        const deletedBook = await Book.findByIdAndDelete(id)
+        if(!deletedBook) return res.status(404).json({
+            success: false,
+            message: "Error al borrar el libro"}) 
+            res.json({success: deletedBook, message: "Libro borrado con éxito"})
+    } catch (error) {
+        const err = error as Error
+        res.status(500).json({
+            success: false,
+            message: err.message
+        })
+        
+    }
+})
 
 app.listen(PORT, () => {
     console.log(`✅ Servidor en escucha en el puerto http://localhost:${PORT}`)
