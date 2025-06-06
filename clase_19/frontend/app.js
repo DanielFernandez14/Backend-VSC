@@ -1,70 +1,113 @@
-const messages = document.querySelector(".messages");
-const productsList = document.querySelector("#products-list");
-const form = document.querySelector("form");
+const message = document.querySelector(".message")
+const productsList = document.querySelector("#products-list")
+const form = document.querySelector("form")
+const submitButton = form.querySelector("button")
+const name = document.getElementById("name")
+const price = document.getElementById("price")
+const category = document.getElementById("category")
 
+const BASE_URL_API = "http://localhost:1234/api/products"
+
+let isEditing = false
+let idToEdit = null
 
 const fetchingProducts = async () => {
     try {
-        const response = await fetch('http://localhost:1234/api/products', {
-            method: 'GET'
+    const response = await fetch(BASE_URL_API, {
+        method: "GET"
+    })
+
+    const responseData = await response.json()
+
+    productsList.innerHTML = ""
+
+    responseData.data.forEach((product) => {
+        const li = document.createElement("li")
+        li.textContent = product.name
+        const divButton = document.createElement("div")
+        const deleteButton = document.createElement("button")
+        deleteButton.textContent = "Borrar"
+        const updateButton = document.createElement("button")
+        updateButton.textContent = "Actualizar"
+        deleteButton.addEventListener("click", () => {
+        deleteProduct(product._id)
         })
-        const responseData = await response.json()
-        console.log(responseData)
-
-        productsList.innerHTML = ""
-
-        responseData.data.forEach((product) => {
-            const li = document.createElement("li")
-            li.textContent = product.name
-            const button = document.createElement("button")
-            button.textContent = "Borrar Producto"
-            button.addEventListener("click", () => {
-                deleteProduct(product._id)
-            })
-            li.appendChild(button)
-            productsList.appendChild(li)
+        updateButton.addEventListener("click", () => {
+        handleUpdateDataProduct(product)
         })
-
-
+        divButton.appendChild(updateButton)
+        divButton.appendChild(deleteButton)
+        li.appendChild(divButton)
+        productsList.appendChild(li)
+    })
     } catch (err) {
-        messages.textContent = err.messages
-        console.log(err)
-}}
-
-const deleteProduct =  (_id) => {
-    console.log("Borrando producto", _id)
+    message.textContent = err.message
+    console.log(err)
+    }
 }
 
-form.addEventListener("submit", async (event) => {
-    event.preventDefault()
-    const name = document.getElementById("name").value
-    const price = document.getElementById("price").value
-    const category = document.getElementById("category").value
+const deleteProduct = async (id) => {
+    if (confirm("Realmente queres borrar esta tarea?")) {
+    await fetch(`${BASE_URL_API}/${id}`, {
+        method: "DELETE"
+    })
+    fetchingProducts()
+    }
+}
 
-    const newProduct = {name, price, category}
+const handleUpdateDataProduct = async (product) => {
+    submitButton.textContent = "Actualizar producto"
+
+    name.value = product.name
+    price.value = product.price
+    category.value = product.category
+
+    isEditing = true
+    idToEdit = product._id
+}
+
+const handleSubmit = async (event) => {
+    event.preventDefault()
+    let response;
+    const dataProduct = { name: name.value, price: price.value, category: category.value }
+
 
     try {
-        const response = await fetch('http://localhost:1234/api/products', {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify(newProduct)
-    })
-const responseData = await response.json()
+    if (!isEditing) {
+        response = await fetch("http://localhost:1234/api/products", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(dataProduct)
+        })
+    } else {
+        submitButton.textContent = "Agregar producto"
 
-    if (!response.ok) {
-    throw new Error(responseData.message)
-}
+        response = await fetch(`${BASE_URL_API}/${idToEdit}`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(dataProduct)
+        })
 
-    fetchingProducts()
-
-    } catch (error) {
-        messages.textContent = error.messages
-        console.log(error)
+        isEditing = false
+        idToEdit = null
     }
 
-    
-})
+    name.value = ""
+    price.value = ""
+    category.value = ""
 
+    const responseData = await response.json()
 
+    if (!response.ok) {
+        throw new Error(responseData.message)
+    }
 
-fetchingProducts();
+    fetchingProducts()
+    } catch (error) {
+    message.textContent = error.message
+    }
+}
+
+form.addEventListener("submit", handleSubmit)
+
+fetchingProducts()

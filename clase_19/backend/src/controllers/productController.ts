@@ -123,5 +123,29 @@ const updateProduct = async (req: Request, res: Response): Promise<any> => {
     }
 };
 
+const deleteProduct = async (req: Request, res: Response): Promise<any> => {
+    const id = req.params.id
+    try {
+    const deletedProduct = await Product.findByIdAndDelete(id)
+    if (!deletedProduct) return res.status(404).json({
+        success: false,
+        message: "producto no encontrado"
+    })
 
-export { getAllProducts, addNewProduct, updateProduct,  }
+    res.json({
+        success: true,
+        message: "producto borrado con éxito",
+        data: deletedProduct
+    })
+    } catch (error) {
+    const err = error as Error
+    res.status(500).json({
+        success: false,
+        message: err.message
+    })
+    }
+}
+
+
+
+export { getAllProducts, addNewProduct, updateProduct, deleteProduct }
