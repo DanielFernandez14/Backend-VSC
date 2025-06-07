@@ -27,13 +27,12 @@ const register = async (req: Request, res: Response): Promise<any> => {
         res.status(201).json({
             success: true,
             messages: "Usuario creado con éxito", 
-            data: newUser
+            data: {_id: newUser._id, username: newDataUser.username, email: newDataUser.email}
         })
 
-        res.json(newUser)
     } catch (error) {
         const err = error as Error
-        res.status(500).json({
+        return res.status(500).json({
             success: false,
             message: err.message
     })
@@ -70,8 +69,8 @@ const login = async (req: Request, res: Response): Promise<any> => {
                 message: "No autorizado, contraseña incorrecta"
             })
         }
-        res.status(200).json({
-            succes: true,
+        return res.status(200).json({
+            success: true,
             message: "Usuario logueado con éxito"
         })
 
