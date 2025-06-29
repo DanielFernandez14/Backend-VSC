@@ -22,7 +22,7 @@ app.use("/api/auth", authRouter)
 
 // antes de acceder a los productos pedir permiso
 // middleware -> una función que se ejecuta en el medio de la petición
-app.use("/api/products", protect, productRouter)
+app.use("/api/products", productRouter)
 
 app.listen(PORT, () => {
   console.log(`✅ Servidor HTTP en funcionamiento en el puerto ${PORT}.`)
